@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.4" type="plugin" group="system" method="upgrade">
+    <name>GA OptOut Marker</name>
+    <author>Markus Baersch</author>
+    <creationDate>2017</creationDate>
+    <copyright>(C) Markus Baersch, gandke gmbh. All rights reserved.</copyright>
+    <license>GNU General Public License version 3 or later; see LICENSE.txt</license>
+    <authorEmail>team@gandke.de</authorEmail>
+    <authorUrl>www.gandke.de</authorUrl>
+    <version>1.0.0</version>
+    <description>Ausgabe eines Markers f. internen Traffic zum Ausschluss aus Google Analytics</description>
+    <files>
+        <file plugin="optoutmarker">optoutmarker.php</file>
+        <filename>index.html</filename>
+    </files>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="ippattern" type="text"
+                       default=""
+                       label="IP-Muster"
+                       filter="raw"
+                        />
+                <field name="hdname" type="text"
+                       default=""
+                       label="Header-Name"
+                       filter="raw"
+                        />
+                <field name="hdvalue" type="text"
+                       default=""
+                       label="Header-Value"
+                       filter="raw"
+                        />
+                <field name="markertext" type="textarea"
+                       default=""
+                       label="Ausgabe"
+                       rows="10"
+                       filter="raw"
+                        />
+            </fieldset>
+        </fields>
+    </config>
+</extension>
